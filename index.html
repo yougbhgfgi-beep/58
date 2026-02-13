@@ -802,7 +802,8 @@
                 schedule(27000, 11); // Names
                 schedule(30000, 12); // Infinity
                 schedule(33000, 13); // English quote
-                schedule(38000, 14); // Whisper
+                schedule(38000, 14); // New Message
+                schedule(48000, 15); // Whisper/Button
 
                 return () => timeouts.forEach(clearTimeout);
             }, []);
@@ -860,12 +861,17 @@
                                 )}
 
                                 {step >= 13 && (
-                                    <p className="mt-12 text-2xl font-script text-white/60 animate-slide-up">For the rest of our life.</p>
+                                    <p className="mt-12 text-2xl font-script text-white/60 animate-slide-up">For the rest of our life ❤️</p>
+                                )}
+                                {step >= 14 && (
+                                    <p className="mt-8 text-lg md:text-xl text-pink-200 font-light animate-slide-up max-w-2xl leading-relaxed px-4">
+                                        "If I could give you one thing in life, I would give you the ability to see yourself through my eyes, only then will you realize how special you are.. ❤️"
+                                    </p>
                                 )}
                             </div>
                         )}
 
-                        {step >= 14 && (
+                        {step >= 15 && (
                             <div className="fixed bottom-6 right-6 z-[110] animate-fade-in flex flex-col items-end gap-2">
                                 <p className="text-xs text-gray-500 mb-2 mr-2">شكراً إنك جيتي حياتي…</p>
                                 <button onClick={onClose} className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-full hover:bg-white hover:text-black transition-all flex items-center gap-2 group">
